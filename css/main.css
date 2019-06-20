@@ -1,0 +1,73 @@
+@import "./eyes.css";
+
+@keyframes moveLeftStache {
+  0% {
+    /* start where the original positionis */
+    transform: rotate(-60deg);
+  }
+  50% {
+    transform: rotate(-40deg);
+  }
+  100% {
+    transform: rotate(-60deg);
+  }
+}
+@keyframes moveRightStache {
+  0% {
+    /* start where the original positionis */
+    transform: rotate(60deg);
+  }
+  50% {
+    transform: rotate(40deg);
+  }
+  100% {
+    transform: rotate(60deg);
+  }
+}
+.mustache {
+  height: 180px;
+  width: 180px;
+  color: black;
+  /* background-color: currentColor; */
+  position: absolute;
+  top: 25px;
+  left: 100px;
+  border-radius: 50%;
+  box-shadow:
+    150px 240px 0 0 currentColor,
+    300px 240px 0 0 currentColor;
+  /* x-offset, y-offset, spread, blur, color */
+}
+.mustache::before {
+  content: ""; /* required to show element */
+  height: inherit;
+  width: inherit;
+  top: 88px;
+  left: -5px;
+  /* background-color: red; */
+  position: absolute;
+  border-bottom: 180px solid black;
+  border-radius: 0 0 0 100%;
+  transform: rotate(-60deg);
+  transform-origin: right 180px;
+  animation-name: moveLeftStache;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+.mustache::after {
+  content: ""; /* required to show element */
+  height: inherit;
+  width: inherit;
+  top: 83px;
+  left: 450px;
+  /* background-color: red; */
+  position: absolute;
+  border-bottom: 180px solid black;
+  border-radius: 0 0 100% 0%;
+  transform: rotate(60deg);
+  transform-origin: left 180px;
+  animation-name: moveRightStache;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}

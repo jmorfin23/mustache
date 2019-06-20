@@ -1,0 +1,46 @@
+@keyframes winkEye {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-90deg);
+  }
+}
+
+.eyes {
+  height: 80px;
+  width: 50px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: black;
+  border-radius: 100%;
+  box-shadow:
+    290px 150px 0 0 currentColor;
+}
+.eyes::before {
+  content: "";
+  position: absolute;
+  top: 110px;
+  left: 420px;
+  height: 140px;
+  width: 140px;
+  border-radius: 100%;
+  border: 5px solid gold;
+}
+.eyes::after {
+  content: "";
+  position: absolute;
+  top: 150px;
+  left: 470px;
+  width: inherit;
+  height: inherit;
+  border-radius: 100%;
+  background-color: currentColor;
+  animation-name: winkEye;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
